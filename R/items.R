@@ -1,3 +1,4 @@
+#Set data collection widgets
 subject_id <- shiny::textInput("subject_id", "Enter Subject ID")
 task_id <- shiny::textInput("task_id", "Enter Task ID")
 e_p <- shinyWidgets::checkboxGroupButtons(
@@ -90,59 +91,41 @@ f_m <- shinyWidgets::checkboxGroupButtons(
   choices = c("Frustration",
               "Mental Demand")
 )
-rate_m <- shiny::sliderInput(
-  "rate_m",
-  "MENTAL DEMAND",
-  min = 0, max = 100, step = 5, value = 0
-)
-rate_pd <- shiny::sliderInput(
-  "rate_pd",
-  "PHYSICAL DEMAND",
-  min = 0, max = 100, step = 5, value = 0
-)
-rate_t <- shiny::sliderInput(
-  "rate_t",
-  "TEMPORAL DEMAND",
-  min = 0, max = 100, step = 5, value = 0
-)
-rate_p <- shiny::sliderInput(
-  "rate_p",
-  "PERFORMANCE",
-  min = 0, max = 100, step = 5, value = 0
-)
-rate_e <- shiny::sliderInput(
-  "rate_e",
-  "EFFORT",
-  min = 0, max = 100, step = 5, value = 0
-)
-rate_f <- shiny::sliderInput(
-  "rate_f",
-  "FRUSTRATION",
-  min = 0, max = 100, step = 5, value = 0
-)
-#action_demo <- shiny::actionButton("clear", "Clear Form")
-#resetForm <- function(session) {
-#  shiny::updateTextInput(session, "subject_id", value = "")
-#  shiny::updateTextInput(session, "task_id", value = "")
-#  shinyWidgets::updateCheckboxGroupButtons(session, e_p, selected=character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, t_f, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, t_e, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, pd_f, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, p_f, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, pd_t, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, pd_p, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, t_m, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, f_e, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, p_m, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, p_t, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, m_e, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, m_pd, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, e_pd, selected = character(0))
-#  shinyWidgets::updateCheckboxGroupButtons(session, f_m, selected = character(0))
-#  shiny::updateSliderInput(session, "rate_m", value = 0)
-#  shiny::updateSliderInput(session, "rate_pd", value = 0)
-#  shiny::updateSliderInput(session, "rate_t", value = 0)
-#  shiny::updateSliderInput(session, "rate_p", value = 0)
-#  shiny::updateSliderInput(session, "rate_e", value = 0)
-#  shiny::updateSliderInput(session, "rate_f", value = 0)
-#}
+
+rate_m <- shiny::sliderInput(inputId = 'rate_m',
+            label = htmltools::div(style='width:300px;',
+                    htmltools::div(style='float:left;', 'Low'),
+                    htmltools::div(style='float:right;', 'High')),
+            min = 0, max = 100, step = 5, value = 0, width = '300px')
+
+rate_pd <- shiny::sliderInput(inputId = 'rate_pd',
+                             label = htmltools::div(style='width:300px;',
+                                     htmltools::div(style='float:left;', 'Low'),
+                                     htmltools::div(style='float:right;', 'High')),
+                             min = 0, max = 100, step = 5, value = 0, width = '300px')
+
+rate_t <- shiny::sliderInput(inputId = 'rate_t',
+                              label = htmltools::div(style='width:300px;',
+                                      htmltools::div(style='float:left;', 'Low'),
+                                      htmltools::div(style='float:right;', 'High')),
+                              min = 0, max = 100, step = 5, value = 0, width = '300px')
+
+rate_p <- shiny::sliderInput(inputId = 'rate_p',
+                             label = htmltools::div(style='width:300px;',
+                                     htmltools::div(style='float:left;', 'Good'),
+                                     htmltools::div(style='float:right;', 'Poor')),
+                             min = 0, max = 100, step = 5, value = 0, width = '300px')
+
+rate_e <- shiny::sliderInput(inputId = 'rate_e',
+                             label = htmltools::div(style='width:300px;',
+                                     htmltools::div(style='float:left;', 'Low'),
+                                     htmltools::div(style='float:right;', 'High')),
+                             min = 0, max = 100, step = 5, value = 0, width = '300px')
+
+
+rate_f <- shiny::sliderInput(inputId = 'rate_f',
+                             label = htmltools::div(style='width:300px;',
+                                     htmltools::div(style='float:left;', 'Low'),
+                                     htmltools::div(style='float:right;', 'High')),
+                             min = 0, max = 100, step = 5, value = 0, width = '300px')
+

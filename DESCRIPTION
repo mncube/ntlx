@@ -16,5 +16,7 @@ RoxygenNote: 7.1.1
 URL: https://github.com/mncube/ntlx
 BugReports: https://github.com/mncube/ntlx/issues
 Imports: 
+    dplyr,
     shiny,
-    shinyWidgets
+    shinyWidgets,
+    tidyr

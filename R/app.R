@@ -1,26 +1,22 @@
+#' ntlxApp
+#'
+#' @return An HTML widget with the NASA Task Load Index data collection sheet
+#' @export
+#'
+#' @examples
+#' ntlxApp()
 ntlxApp <- function(){
   ui <- shiny::fluidPage(
     title = "NASA Task Load Index",
-    # CSS ----
-    # stop the default input containers being 300px, which is ugly
-    #tags$head(
-    #  tags$style(HTML("
-    #                .shiny-input-container:not(.shiny-input-container-inline) {
-    #                  width: 100%;
-    #                  max-width: 100%;
-    #                }
-    #                "))
-    #),
 
     # App title ----
-    #h3("NASA Task Load Index"),
-
-    #p(""),
+    htmltools::h1("NASA Task Load Index"),
 
     shiny::fluidRow(
       shiny::column(width=6, subject_id),
       shiny::column(width=6, task_id)
     ),
+    htmltools::h3("Sources-of-Workload Comparison Cards"),
     e_p,
     t_f,
     t_e,
@@ -36,11 +32,18 @@ ntlxApp <- function(){
     m_pd,
     e_pd,
     f_m,
+    htmltools::h3("Rating Sheet"),
+    htmltools::h5("MENTAL DEMAND"),
     rate_m,
+    htmltools::h5("PHYSICAL DEMAND"),
     rate_pd,
+    htmltools::h5("TEMPORAL DEMAND"),
     rate_t,
+    htmltools::h5("PERFORMANCE"),
     rate_p,
+    htmltools::h5("EFFORT"),
     rate_e,
+    htmltools::h5("FRUSTRATION"),
     rate_f,
 
     shiny::actionButton("submit", "Submit"),
@@ -53,7 +56,6 @@ ntlxApp <- function(){
     # When the Submit button is clicked, save the form data
     observeEvent(input$submit, {
       saveData(input)
-      #resetForm(session)
 
       # thank the user
       n_responses <- length(list.files(outputDir))
@@ -61,10 +63,7 @@ ntlxApp <- function(){
       showNotification(response, duration = 0, type = "message")
     })
 
-    # clear the fields
-    #observeEvent(input$clear, {
-    #  resetForm(session)
-    #})
+
   }
 
   shiny::shinyApp(ui, server)

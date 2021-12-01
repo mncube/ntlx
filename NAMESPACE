@@ -2,3 +2,5 @@
 
 export(enterOutputPath)
 export(getResults)
+export(ntlxApp)
+export(processResults)

@@ -39,11 +39,18 @@ click submit.
 #ntlxApp()
 ```
 
-## Get data
+## Process Data
 
 After you finish administering the ntlx to all subjects across all
 tasks, you can return your data as a data frame by calling getResults()
 
 ``` r
 #getResults()
+```
+
+Or you can return processed results which contain raw scores, weights,
+adjusted scores, and overall weighted workload scores
+
+``` r
+#processResults()
 ```
