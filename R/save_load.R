@@ -1,4 +1,16 @@
-outputDir <- "responses"
+#' enterOutputPath
+#'
+#' @param path Enter path where you want to store output
+#'
+#' @return path for output as a named object called outputDir
+#' @export
+#'
+#' @examples
+#' enterOutputPath(getwd())
+enterOutputPath<- function(path){
+  outputDir <<- path
+
+}
 
 # Define the fields we want to save from the form
 fields <- c("subject_id",

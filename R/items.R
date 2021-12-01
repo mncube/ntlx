@@ -1,5 +1,5 @@
-subject_id <- textInput("subject_id", "Enter Subject ID")
-task_id <- textInput("task_id", "Enter Task ID")
+subject_id <- shiny::textInput("subject_id", "Enter Subject ID")
+task_id <- shiny::textInput("task_id", "Enter Task ID")
 e_p <- shinyWidgets::checkboxGroupButtons(
   inputId = "e_p",
   label = "",
@@ -90,39 +90,40 @@ f_m <- shinyWidgets::checkboxGroupButtons(
   choices = c("Frustration",
               "Mental Demand")
 )
-rate_m <- sliderInput(
+rate_m <- shiny::sliderInput(
   "rate_m",
   "MENTAL DEMAND",
   min = 0, max = 100, step = 5, value = 0
 )
-rate_pd <- sliderInput(
+rate_pd <- shiny::sliderInput(
   "rate_pd",
   "PHYSICAL DEMAND",
   min = 0, max = 100, step = 5, value = 0
 )
-rate_t <- sliderInput(
+rate_t <- shiny::sliderInput(
   "rate_t",
   "TEMPORAL DEMAND",
   min = 0, max = 100, step = 5, value = 0
 )
-rate_p <- sliderInput(
+rate_p <- shiny::sliderInput(
   "rate_p",
   "PERFORMANCE",
   min = 0, max = 100, step = 5, value = 0
 )
-rate_e <- sliderInput(
+rate_e <- shiny::sliderInput(
   "rate_e",
   "EFFORT",
   min = 0, max = 100, step = 5, value = 0
 )
-rate_f <- sliderInput(
+rate_f <- shiny::sliderInput(
   "rate_f",
   "FRUSTRATION",
   min = 0, max = 100, step = 5, value = 0
 )
+action_demo <- shiny::actionButton("clear", "Clear Form")
 resetForm <- function(session) {
-  updateTextInput(session, "subject_id", value = "")
-  updateTextInput(session, "task_id", value = "")
+  shiny::updateTextInput(session, "subject_id", value = "")
+  shiny::updateTextInput(session, "task_id", value = "")
   shinyWidgets::updateCheckboxGroupButtons(session, e_p, selected = NULL)
   shinyWidgets::updateCheckboxGroupButtons(session, t_f, selected = NULL)
   shinyWidgets::updateCheckboxGroupButtons(session, t_e, selected = NULL)
@@ -138,10 +139,10 @@ resetForm <- function(session) {
   shinyWidgets::updateCheckboxGroupButtons(session, m_pd, selected = NULL)
   shinyWidgets::updateCheckboxGroupButtons(session, e_pd, selected = NULL)
   shinyWidgets::updateCheckboxGroupButtons(session, f_m, selected = NULL)
-  updateSliderInput(session, "rate_m", value = 0)
-  updateSliderInput(session, "rate_pd", value = 0)
-  updateSliderInput(session, "rate_t", value = 0)
-  updateSliderInput(session, "rate_p", value = 0)
-  updateSliderInput(session, "rate_e", value = 0)
-  updateSliderInput(session, "rate_f", value = 0)
+  shiny::updateSliderInput(session, "rate_m", value = 0)
+  shiny::updateSliderInput(session, "rate_pd", value = 0)
+  shiny::updateSliderInput(session, "rate_t", value = 0)
+  shiny::updateSliderInput(session, "rate_p", value = 0)
+  shiny::updateSliderInput(session, "rate_e", value = 0)
+  shiny::updateSliderInput(session, "rate_f", value = 0)
 }
