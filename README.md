@@ -39,7 +39,7 @@ click submit.
 #ntlxApp()
 ```
 
-## Process Data
+## Process data
 
 After you finish administering the ntlx to all subjects across all
 tasks, you can return your data as a data frame by calling getResults()
