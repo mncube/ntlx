@@ -44,7 +44,7 @@ ntlxApp <- function(){
     rate_f,
 
     shiny::actionButton("submit", "Submit"),
-    action_demo
+    #action_demo
   )
 
   # Reactive functions ----
@@ -53,19 +53,18 @@ ntlxApp <- function(){
     # When the Submit button is clicked, save the form data
     observeEvent(input$submit, {
       saveData(input)
-      resetForm(session)
+      #resetForm(session)
 
       # thank the user
       n_responses <- length(list.files(outputDir))
-      response <- paste0("Thank you for completing the NTLX!",
-                         n_responses, ".")
+      response <- "Thank you for completing the NTLX!  Close the window and rerun ntlxApp() to continue data collection."
       showNotification(response, duration = 0, type = "message")
     })
 
     # clear the fields
-    observeEvent(input$clear, {
-      resetForm(session)
-    })
+    #observeEvent(input$clear, {
+    #  resetForm(session)
+    #})
   }
 
   shiny::shinyApp(ui, server)
