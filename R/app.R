@@ -47,7 +47,6 @@ ntlxApp <- function(){
     rate_f,
 
     shiny::actionButton("submit", "Submit"),
-    #action_demo
   )
 
   # Reactive functions ----
@@ -55,6 +54,7 @@ ntlxApp <- function(){
 
     # When the Submit button is clicked, save the form data
     observeEvent(input$submit, {
+
       saveData(input)
 
       # thank the user
