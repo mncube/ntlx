@@ -1,95 +1,125 @@
 #Set data collection widgets
 subject_id <- shiny::textInput("subject_id", "Enter Subject ID")
 task_id <- shiny::textInput("task_id", "Enter Task ID")
-e_p <- shinyWidgets::checkboxGroupButtons(
+e_p <- shiny::radioButtons(
   inputId = "e_p",
   label = "",
   choices = c("Effort",
-              "Performance")
+              "Performance"),
+  selected = character(0),
+  inline = TRUE
 )
-t_f <- shinyWidgets::checkboxGroupButtons(
+t_f <- shiny::radioButtons(
   inputId = "t_f",
   label = "",
   choices = c("Temporal Demand",
-              "Frustration")
+              "Frustration"),
+  selected = character(0),
+  inline = TRUE
 )
-t_e <- shinyWidgets::checkboxGroupButtons(
+t_e <- shiny::radioButtons(
   inputId = "t_e",
   label = "",
   choices = c("Temporal Demand",
-              "Effort")
+              "Effort"),
+  selected = character(0),
+  inline = TRUE
 )
-pd_f <- shinyWidgets::checkboxGroupButtons(
+pd_f <- shiny::radioButtons(
   inputId = "pd_f",
   label = "",
   choices = c("Physical Demand",
-              "Frustration")
+              "Frustration"),
+  selected = character(0),
+  inline = TRUE
 )
-p_f <- shinyWidgets::checkboxGroupButtons(
+p_f <- shiny::radioButtons(
   inputId = "p_f",
   label = "",
   choices = c("Performance",
-              "Frustration")
+              "Frustration"),
+  selected = character(0),
+  inline = TRUE
 )
-pd_t <- shinyWidgets::checkboxGroupButtons(
+pd_t <- shiny::radioButtons(
   inputId = "pd_t",
   label = "",
   choices = c("Physical Demand",
-              "Temporal Demand")
+              "Temporal Demand"),
+  selected = character(0),
+  inline = TRUE
 )
-pd_p <- shinyWidgets::checkboxGroupButtons(
+pd_p <- shiny::radioButtons(
   inputId = "pd_p",
   label = "",
   choices = c("Physical Demand",
-              "Performance")
+              "Performance"),
+  selected = character(0),
+  inline = TRUE
 )
-t_m <- shinyWidgets::checkboxGroupButtons(
+t_m <- shiny::radioButtons(
   inputId = "t_m",
   label = "",
   choices = c("Temporal Demand",
-              "Mental Demand")
+              "Mental Demand"),
+  selected = character(0),
+  inline = TRUE
 )
-f_e <- shinyWidgets::checkboxGroupButtons(
+f_e <- shiny::radioButtons(
   inputId = "f_e",
   label = "",
   choices = c("Frustration",
-              "Effort")
+              "Effort"),
+  selected = character(0),
+  inline = TRUE
 )
-p_m <- shinyWidgets::checkboxGroupButtons(
+p_m <- shiny::radioButtons(
   inputId = "p_m",
   label = "",
   choices = c("Performance",
-              "Mental Demand")
+              "Mental Demand"),
+  selected = character(0),
+  inline = TRUE
 )
-p_t <- shinyWidgets::checkboxGroupButtons(
+p_t <- shiny::radioButtons(
   inputId = "p_t",
   label = "",
   choices = c("Performance",
-              "Temporal Demand")
+              "Temporal Demand"),
+  selected = character(0),
+  inline = TRUE
 )
-m_e <- shinyWidgets::checkboxGroupButtons(
+m_e <- shiny::radioButtons(
   inputId = "m_e",
   label = "",
   choices = c("Mental Demand",
-              "Effort")
+              "Effort"),
+  selected = character(0),
+  inline = TRUE
 )
-m_pd <- shinyWidgets::checkboxGroupButtons(
+m_pd <- shiny::radioButtons(
   inputId = "m_pd",
   label = "",
   choices = c("Mental Demand",
-              "Physical Demand")
+              "Physical Demand"),
+  selected = character(0),
+  inline = TRUE
 )
-e_pd <- shinyWidgets::checkboxGroupButtons(
+e_pd <- shiny::radioButtons(
   inputId = "e_pd",
   label = "",
   choices = c("Effort",
-              "Physical Demand")
+              "Physical Demand"),
+  selected = character(0),
+  inline = TRUE
 )
-f_m <- shinyWidgets::checkboxGroupButtons(
+f_m <- shiny::radioButtons(
   inputId = "f_m",
   label = "",
   choices = c("Frustration",
-              "Mental Demand")
+              "Mental Demand"),
+  selected = character(0),
+  inline = TRUE
 )
 
 rate_m <- shiny::sliderInput(inputId = 'rate_m',

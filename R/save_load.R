@@ -50,28 +50,6 @@ saveData <- function(input) {
   }
   data$submit_time <- date()
 
-  for(i in 1:nrow(data)){
-    if(length(data$e_p[[i]] > 1) |
-       length(data$t_f[[i]] > 1) |
-       length(data$t_e[[i]] > 1) |
-       length(data$pd_f[[i]] > 1) |
-       length(data$p_f[[i]] > 1) |
-       length(data$pd_t[[i]] > 1) |
-       length(data$pd_p[[i]] > 1) |
-       length(data$t_m[[i]] > 1) |
-       length(data$f_e[[i]] > 1) |
-       length(data$p_m[[i]] > 1) |
-       length(data$p_t[[i]] > 1) |
-       length(data$m_e[[i]] > 1) |
-       length(data$m_pd[[i]] > 1) |
-       length(data$e_pd[[i]] > 1) |
-       length(data$f_m[[i]] > 1) ){
-       #stop("One of the Sources-of-Workload Comparison Cards has more than one selection. Please stop the ntlxApp and redo the assessment")
-    } else {
-      next
-    }
-  }
-
   # Create a unique file name
   fileName <- sprintf(
     "%s_%s.rds",
